@@ -1,8 +1,5 @@
 package org.seckill.enums;
 
-/**
- * Created by codingBoy on 16/11/28.
- */
 public enum SeckillStatEnum {
 
     SUCCESS(1,"秒杀成功"),

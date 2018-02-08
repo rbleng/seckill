@@ -6,9 +6,6 @@ import org.apache.ibatis.annotations.Param;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by codingBoy on 16/11/26.
- */
 public interface SeckillDao
 {
 

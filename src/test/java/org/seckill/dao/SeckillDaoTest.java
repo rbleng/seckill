@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by codingBoy on 16/11/27.
  * 配置spring和junit整合，这样junit在启动时就会加载spring容器
  */
 @RunWith(SpringJUnit4ClassRunner.class)

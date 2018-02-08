@@ -7,9 +7,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
-/**
- * Created by codingBoy on 16/11/27.
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 //告诉junit spring的配置文件
 @ContextConfiguration({"classpath:spring/spring-dao.xml"})

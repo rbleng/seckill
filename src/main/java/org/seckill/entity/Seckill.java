@@ -2,9 +2,6 @@ package org.seckill.entity;
 
 import java.util.Date;
 
-/**
- * Created by codingBoy on 16/11/24.
- */
 public class Seckill
 {
     private long seckillId;
