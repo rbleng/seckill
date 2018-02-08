@@ -70,7 +70,7 @@ IDEA+Maven+SSM框架。
 在命令行中输入如下命令:  
 
 ```
-mvn archetype:generate -DgroupId=cn.codingxiaxw.seckill -DartifactId=seckill -Dpackage=cn.codingxiaxw.seckill -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:generate -DgroupId=org.seckill.seckill -DartifactId=seckill -Dpackage=org.seckill.seckill -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-webapp
 ```
 
 然后使用IDEA打开该项目，在IDEA中对项目按照Maven项目的标准骨架补全我们项目的相应文件包，最后的工程结构如下:  
@@ -98,7 +98,7 @@ main包下进行我们项目的代码编写及相关配置文件，test包下进
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>cn.codingxiaxw.seckill</groupId>
+  <groupId>org.seckill.seckill</groupId>
   <artifactId>seckill</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
@@ -266,7 +266,7 @@ MySQL实现秒杀的难点分析:当用户A秒杀id为10的商品时，此时MyS
 ### 2.3Dao层设计开发
 首先创建数据库，相关表的sql语句我在main包下的sql包中已经给出。  
 
-然后创建对应表的实体类，在java包下创建cn.codingxiaxw.entity包，创建一个Seckill.java实体类，代码如下:
+然后创建对应表的实体类，在java包下创建org.seckill.entity包，创建一个Seckill.java实体类，代码如下:
 ```java
 public class Seckill
 {
@@ -403,7 +403,7 @@ public class SuccessKilled
 }
 ```
 
-然后针对实体创建出对应dao层的接口，在cn.codingxiaxw.dao包下创建Seckill.java:
+然后针对实体创建出对应dao层的接口，在org.seckill.dao包下创建Seckill.java:
 ```java
 public interface SeckillDao
 {
@@ -502,7 +502,7 @@ SeckillDao.xml:
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.codingxiaxw.dao.SeckillDao">
+<mapper namespace="org.seckill.dao.SeckillDao">
     <!--目的:为dao接口方法提供sql语句配置
     即针对dao接口中的方法编写我们的sql语句-->
 
@@ -538,7 +538,7 @@ SuccessKilledDao.xml:
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.codingxiaxw.dao.SuccessKilledDao">
+<mapper namespace="org.seckill.dao.SuccessKilledDao">
 
     <insert id="insertSuccessKilled">
         <!--当出现主键冲突时(即重复秒杀时)，会报错;不想让程序报错，加入ignore-->
@@ -628,7 +628,7 @@ SuccessKilledDao.xml:
         <!--配置mybatis全局配置文件:mybatis-config.xml-->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!--扫描entity包,使用别名,多个用;隔开-->
-        <property name="typeAliasesPackage" value="cn.codingxiaxw.entity"/>
+        <property name="typeAliasesPackage" value="org.seckill.entity"/>
         <!--扫描sql配置文件:mapper需要的xml文件-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
@@ -638,7 +638,7 @@ SuccessKilledDao.xml:
         <!--注入SqlSessionFactory-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出需要扫描的Dao接口-->
-        <property name="basePackage" value="cn.codingxiaxw.dao"/>
+        <property name="basePackage" value="org.seckill.dao"/>
     </bean>
 </beans>
 ```
