@@ -32,14 +32,14 @@ public class SeckillServiceTest {
     @Autowired
     private SeckillService seckillService;
 
-    @Test
+//    @Test
     public void getSeckillList() throws Exception {
         List<Seckill> seckills=seckillService.getSeckillList();
         System.out.println(seckills);
 
     }
 
-    @Test
+//    @Test
     public void getById() throws Exception {
 
         long seckillId=1000;
@@ -47,7 +47,7 @@ public class SeckillServiceTest {
         System.out.println(seckill);
     }
 
-    @Test//完整逻辑代码测试，注意可重复执行
+//    @Test//完整逻辑代码测试，注意可重复执行
     public void testSeckillLogic() throws Exception {
         long seckillId=1000;
         Exposer exposer=seckillService.exportSeckillUrl(seckillId);
@@ -75,7 +75,7 @@ public class SeckillServiceTest {
         }
     }
 
-    @Test
+//    @Test
     public void executeSeckill() throws Exception {
 
         long seckillId=1000;

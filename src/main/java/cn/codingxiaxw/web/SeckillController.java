@@ -8,7 +8,6 @@ import cn.codingxiaxw.enums.SeckillStatEnum;
 import cn.codingxiaxw.exception.RepeatKillException;
 import cn.codingxiaxw.exception.SeckillCloseException;
 import cn.codingxiaxw.service.SeckillService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
